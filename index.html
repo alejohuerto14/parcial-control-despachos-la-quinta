@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Despachos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Distribuidora La Quinta</h1>
+ <h2>Control de despachos e inventario</h2>
+
+  <div class="menu">
+    <button onclick="mostrarRegistro()">Registrar despacho</button>
+    <button onclick="mostrarHistorial()">Historial</button>
+  </div>
+
+  <div id="registro">
+    <h3>Registrar despacho</h3>
+
+    <form id="despachoForm">
+      <label>Solicitante:</label>
+      <input type="text" id="solicitante" required>
+
+      <label>Correo:</label>
+      <input type="email" id="correo" required>
+
+      <label>Código del producto:</label>
+      <input type="text" id="codigo_producto" placeholder="INS-0101" required>
+
+      <label>Cantidad:</label>
+      <input type="number" id="cantidad" min="1" required>
+
+      <label>Destino:</label>
+      <input type="text" id="destino" required>
+
+      <label>Motivo:</label>
+      <textarea id="motivo" rows="3" required></textarea>
+
+      <button type="submit">Procesar despacho</button>
+    </form>
+
+    <div id="resultado"></div>
+  </div>
+
+  <div id="historial" style="display:none;">
+    <h3>Historial de movimientos</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Código</th>
+          <th>Cantidad</th>
+          <th>Solicitante</th>
+          <th>Destino</th>
+          <th>Resultado</th>
+        </tr>
+      </thead>
+      <tbody id="historialBody">
+      </tbody>
+    </table>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
